@@ -66,5 +66,28 @@ q2:
     vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) {
         return {getElementsOnlyInFirstList(nums1, nums2), getElementsOnlyInFirstList(nums2, nums1)};
     }
-q:
+q3:
+
+q4:
+class Solution {
+public:
+    int arrayPairSum(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int ans =0 , n=nums.size();
+        for(int i=0;i<n;i+=2) ans+= nums[i];
+        return ans;
+    }
+};
+q5:
+class Solution {
+public:
+    int arrangeCoins(int n) {
+        int i=1;
+        while(n>=i){
+            n=n-i;
+            i++;
+        }
+        return  i-1;
+    }
+};
   
