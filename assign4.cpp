@@ -67,7 +67,17 @@ q2:
         return {getElementsOnlyInFirstList(nums1, nums2), getElementsOnlyInFirstList(nums2, nums1)};
     }
 q3:
-
+class Solution {
+public:
+    vector<vector<int>> transpose(vector<vector<int>>& matrix) {
+        vector<vector<int>> ans(matrix[0].size());
+        int n = matrix[0].size() , m =matrix.size();
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++) ans[i].push_back(matrix[j][i]);
+        }
+        return ans;
+    }
+};
 q4:
 class Solution {
 public:
@@ -90,4 +100,42 @@ public:
         return  i-1;
     }
 };
-  
+
+q6:
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        for(int i=0;i<nums.size();i++){
+             nums[i]=nums[i]*nums[i];
+        }
+        sort(nums.begin(), nums.end());  
+        return nums;
+    }
+};
+
+q7:
+class Solution {
+public:
+    int maxCount(int m, int n, vector<vector<int>>& ops) {
+        for (int i = 0; i < ops.size(); ++i) {
+            m = min(m, ops[i][0]);
+            n = min(n, ops[i][1]);
+        }
+        return m*n;
+    }
+};
+q8:
+class Solution {
+public:
+    vector<int> shuffle(vector<int>& nums, int n) {
+        int i=0, j=n;
+        vector<int> ans;
+        while(i<n&&j<2*n){
+            ans.push_back(nums[i]);
+            i++;
+            ans.push_back(nums[j]);
+            j++;
+        }
+        return ans;
+    }
+};
